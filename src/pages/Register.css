@@ -1,0 +1,248 @@
+/* Full-screen container */
+.login-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.ul-property {
+    text-decoration: none;
+}
+
+/* Left Panel - Form */
+.login-form-container {
+    width: 40%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo-img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Reduced width to make it more compact */
+    align-items: center; /* Centering elements */
+}
+
+/* Input Fields - Centered and Styled */
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+.forgot-password {
+    color:  #007bff
+}
+
+/* Smaller and compact input fields */
+input {
+    padding: 8px; /* Reduced padding */
+    color: black;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    width: 100%; /* Ensure input fields take the full width */
+}
+
+/* Override browser autofill color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    background-color: white !important; /* Force white background */
+    color: black !important;
+    -webkit-box-shadow: 0 0 0 50px white inset !important; /* Cover autofill */
+    box-shadow: 0 0 0 50px white inset !important;
+}
+
+input:focus {
+    border: 1px solid #007bff;
+    outline: none;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.3);
+}
+
+input::content {
+    color: white !important;;
+}
+
+label {
+    color: black;
+}
+
+/* Login Button - Smaller, Better Contrast */
+button {
+    background-color: #007bff; /* Modern blue */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-left: 8px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    font-weight: bold;
+    width: 80%; /* Smaller button */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Create Account Button - Outline */
+.create-account {
+    background-color: white;
+    color: #007bff;
+    border: 2px solid #007bff;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 10px;
+    font-size: 14px;
+    width: 40%;
+}
+
+.create-account:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Right Panel - Centering `#wesolveIT` */
+.login-background {
+    width: 60%;
+    background: linear-gradient(to right, #2c3e50, #1c2833);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center; /* Center text */
+    padding: 40px;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Space evenly */
+    align-items: center; /* Vertically center content */
+    padding: 15px 40px;
+    font-size: 14px;
+}
+
+/* Left Side (Company Name) */
+.footer-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Align left */
+    margin-left: 10cap;
+    align-items: center; /* Center vertically */
+}
+
+/* Right Side (Links) */
+.footer-links {
+    flex: 1;
+    display: flex;
+    justify-content: space-around; /* Align right */
+    align-items: center; /* Center vertically */
+}
+
+/* Footer Links */
+.footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Remove Bullet Points and Adjust Spacing */
+.info-box ul {
+    list-style: none; /* Removes default bullet points */
+    padding-left: 0; /* Removes default left margin */
+}
+
+.info-box ul li {
+    padding-left: 0; /* Align text perfectly */
+    margin-bottom: 8px; /* Adds spacing between each item */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* Modal Styling */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: black;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
