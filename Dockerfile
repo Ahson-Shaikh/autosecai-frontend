@@ -1,34 +1,20 @@
-# ==============================
-#  Stage 1: Build
-# ==============================
-FROM node:18-alpine AS build
+# Use a lightweight Node 18 base image
+FROM node:18-alpine
 
-# Create and use the app directory
+# Set the working directory
 WORKDIR /app
 
-# Copy dependency files first (for better caching)
+# Copy package files first (for better caching of npm install)
 COPY package*.json ./
 
-# Install dependencies
+# Install dependencies (including dev dependencies)
 RUN npm install
 
-# Copy the rest of your app’s source code
+# Copy the rest of your application code
 COPY . .
 
-# Build the production bundles (e.g. CRA uses `npm run build`)
-# If using Vite, it might be `npm run build` as well.
-RUN npm run build
+# If your dev server runs on a certain port (e.g., 3000 for Next.js, 5173 for Vite), expose it.
+EXPOSE 5173
 
-# ==============================
-#  Stage 2: Production
-# ==============================
-FROM nginx:alpine
-
-# Copy build files from Stage 1
-COPY --from=build /app/dist /usr/share/nginx/html
-
-# Expose port 80 in the container
-EXPOSE 80
-
-# Run nginx in the foreground
-CMD ["nginx", "-g", "daemon off;"]
+# Start the development server
+CMD ["npm", "run", "dev"]
