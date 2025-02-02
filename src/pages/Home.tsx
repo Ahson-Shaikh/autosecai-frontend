@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Home.css";
+import Navbar from "./Navbar";
 import Dashboard from "./Dashboard";
 import Scans from "./Scan";
 import Reports from "./Reports";
-
+import "./Home.css";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -13,6 +13,10 @@ const Home = () => {
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     navigate("/login");
+  };
+
+  const handleSearch = (query: string) => {
+    console.log("Searching for:", query);
   };
 
   return (
@@ -30,6 +34,7 @@ const Home = () => {
 
       {/* Main Content */}
       <div className="main-content">
+        <Navbar onSearch={handleSearch} /> {/* Navbar added above all pages */}
         {activeSection === "dashboard" && <Dashboard />}
         {activeSection === "scans" && <Scans />}
         {activeSection === "reports" && <Reports />}
@@ -39,3 +44,7 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+

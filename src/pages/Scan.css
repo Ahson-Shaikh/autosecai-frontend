@@ -1,0 +1,70 @@
+.scan-container {
+    padding: 20px;
+  }
+  
+  .scan-options-card {
+    background: #fff;
+    padding: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .scan-type-toggle {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .connect-github-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .github-connected-label {
+    margin: 0;
+    font-weight: 600;
+    color: #28a745;
+  }
+  
+  .repo-list-card {
+    background: #fff;
+    padding: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .repo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+
+  .repo-list-card h3 {
+    color: black;
+  }
+  
+  .repo-table th,
+  .repo-table td {
+    color: black;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+  }
+  
+  .run-scan-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  

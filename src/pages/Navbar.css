@@ -1,0 +1,92 @@
+/* Navbar Layout */
+.navbar {
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Container for the search bar + button */
+  .search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 2rem; /* adjust spacing before the profile icon if you like */
+  }
+  
+  /* The Search Bar Box (icon + input) */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background: #ffffff;
+    width: 100%;       /* adjust to taste or use max-width to limit it */
+  }
+  
+  /* Search Icon */
+  .search-icon {
+    font-size: 18px;
+    color: #555;
+    margin-right: 6px;
+  }
+  
+  /* Input inside the search bar */
+  .search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 5px 0;
+  }
+  
+  /* The smaller Search button - now outside the .search-bar */
+  .search-button {
+    margin-left: 100px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;  /* smaller, more modern size */
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Profile container / icon / dropdown remain unchanged */
+  .profile-container {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .profile-icon {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    color: black;
+    top: 40px;
+    right: 0;
+    background: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+  }
+  
+  .dropdown-menu p {
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .dropdown-menu p:hover {
+    background: #f0f0f0;
+  }
+  
