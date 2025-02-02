@@ -1,20 +1,19 @@
-# Use a lightweight Node 18 base image
 FROM node:18-alpine
 
 # Set the working directory
 WORKDIR /app
 
-# Copy package files first (for better caching of npm install)
+# Copy package files first (better cache)
 COPY package*.json ./
 
-# Install dependencies (including dev dependencies)
+# Install all dependencies (including devDeps)
 RUN npm install
 
-# Copy the rest of your application code
+# Copy the rest of your code
 COPY . .
 
-# If your dev server runs on a certain port (e.g., 3000 for Next.js, 5173 for Vite), expose it.
+# Expose Vite's default port
 EXPOSE 5173
 
-# Start the development server
-CMD ["npm", "run", "dev"]
+# Run "npm run dev" with "--host 0.0.0.0" so it's accessible externally
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
