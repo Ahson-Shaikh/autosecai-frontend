@@ -17,7 +17,8 @@ const Login = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-        const res = await fetch("http://localhost:3000/login", {
+        const apiUrl = import.meta.env.VITE_API_URL;
+        const res = await fetch(`${apiUrl}/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
@@ -77,23 +78,27 @@ const Login = () => {
       {/* Right Panel - Background and Information */}
       <div className="login-background">
       <div className="info-box">
-        <h1>#wesolveIT</h1>
+      <h1>#wesolveIT</h1>
         <p>
-            Simplify multi-cloud management and procurement with a single pane of glass 
-            for self-service visibility across cloud providers, ensuring better lifecycle 
-            and cost management.
+        Streamline your application security testing with advanced 
+        <strong>SAST (Static Application Security Testing)</strong> and 
+        <strong>DAST (Dynamic Application Security Testing)</strong>. 
+        Our platform automates scanning at every stage of the SDLC—helping you 
+        detect vulnerabilities early and address them quickly. 
         </p>
-        <h3>Benefits include:</h3>
+        <h3>Why AutoSecAI?</h3>
         <ul>
-            <li>Single portal for multiple provider XaaS subscriptions</li>
-            <li>Digitally sign and access EULAs</li>
-            <li>Spend and budget controls</li>
-            <li>Predictive analytics and transactional reporting</li>
-            <li>Real-time subscription support</li>
-            <li>Access to expert guidance</li>
-            <li>Industry-leading SaaS, IaaS, and PaaS offerings</li>
+            <li>Comprehensive SAST and DAST analysis for in-depth code coverage</li>
+            <li>Detailed vulnerability reports with clear remediation steps</li>
+            <li>Integration with modern CI/CD pipelines and developer workflows</li>
+            <li>Real-time alerts and dashboards for tracking security posture</li>
+            <li>Expert guidance to prioritize and fix critical issues first</li>
+            <li>Meet compliance and regulatory requirements with ease</li>
         </ul>
-        <p>Purchase and manage your subscriptions—all in one place.</p>
+        <p>
+            Protect your applications from potential threats and security pitfalls. 
+            Sign up now to get started with industry-leading vulnerability assessments.
+        </p>
         <a href="#">Sign up for a free account now.</a>
         </div>
       </div>
