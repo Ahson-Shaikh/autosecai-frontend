@@ -6,7 +6,6 @@ import "./Login.css"; // Import CSS for styling
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   
   const navigate = useNavigate();
@@ -73,7 +72,6 @@ const Login = () => {
         </form>
         <p className="forgot-password">Forgot Password?</p>
         <button className="create-account" onClick={handleRegister}>Create Account</button>
-        <p className="error-message">{message}</p>
       </div>
 
       {/* Right Panel - Background and Information */}

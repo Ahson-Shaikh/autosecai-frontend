@@ -1,7 +1,7 @@
 # ==============================
 #  Stage 1: Build
 # ==============================
-FROM node:16-alpine AS build
+FROM node:18-alpine AS build
 
 # Create and use the app directory
 WORKDIR /app
@@ -25,7 +25,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy build files from Stage 1
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Expose port 80 in the container
 EXPOSE 80
