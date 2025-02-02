@@ -44,7 +44,7 @@ const Login = () => {
       {/* Left Panel - Login Form */}
       <div className="login-form-container">
         <div className="logo">
-          <img src="../../public/company_logo.png" alt="Company Logo" className="logo-img" />
+          <img src="/company_logo.png" alt="Company Logo" className="logo-img" />
         </div>
         <form onSubmit={handleLogin}>
         <div className="input-group">
