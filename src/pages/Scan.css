@@ -1,17 +1,25 @@
 .scan-container {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: #333;
+  }
+  
+  .scan-container h2 {
+    margin-bottom: 10px;
+    color: #333;
   }
   
   .scan-options-card {
-    background: #fff;
-    padding: 16px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-bottom: 20px;
-  
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
   }
   
   .scan-type-toggle {
@@ -19,52 +27,252 @@
     gap: 20px;
   }
   
-  .connect-github-btn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
+  .scan-type-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     cursor: pointer;
+    font-weight: 500;
+    user-select: none;
+    color: #333;
+  }
+  
+  .connect-github-btn, .view-results-btn, .run-scan-btn, .start-scan-btn, .refresh-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    max-width: 200px;
+  }
+  
+  .view-results-btn {
+    background-color: #27ae60;
+  }
+  
+  .run-scan-btn, .start-scan-btn {
+    background-color: #3498db;
+  }
+  
+  .refresh-btn {
+    background-color: #7f8c8d;
+    align-self: flex-end;
+  }
+  
+  .connect-github-btn:hover, .view-results-btn:hover, .run-scan-btn:hover, .start-scan-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .refresh-btn:hover {
+    background-color: #6c7a89;
+  }
+  
+  .view-results-btn:hover {
+    background-color: #219653;
+  }
+  
+  .connect-github-btn:disabled, .refresh-btn:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
   }
   
   .github-connected-label {
-    margin: 0;
-    font-weight: 600;
-    color: #28a745;
+    color: #27ae60;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
   
-  .repo-list-card {
-    background: #fff;
-    padding: 16px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  .github-connected-label::before {
+    content: "✓";
+    font-weight: bold;
   }
   
-  .repo-table {
+  .repo-list-card, .scans-list-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .repo-list-card h3, .scans-list-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .repo-table, .scans-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 12px;
-  }
-
-  .repo-list-card h3 {
-    color: black;
+    margin-top: 10px;
   }
   
-  .repo-table th,
-  .repo-table td {
-    color: black;
+  .repo-table th, .repo-table td, 
+  .scans-table th, .scans-table td {
+    padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #eee;
-    padding: 8px;
+    color: #333;
   }
   
-  .run-scan-btn {
-    background-color: #28a745;
-    color: #fff;
+  .repo-table th, .scans-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .repo-table tr:hover, .scans-table tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  .status-completed {
+    background-color: #d5f5e3;
+    color: #27ae60;
+  }
+  
+  .status-in_progress {
+    background-color: #ebf5fb;
+    color: #3498db;
+  }
+  
+  .status-failed {
+    background-color: #fadbd8;
+    color: #e74c3c;
+  }
+  
+  .status-cancelled {
+    background-color: #f9e79f;
+    color: #f39c12;
+  }
+  
+  .repo-info {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .repo-info p {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .scan-description {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+    color: #333;
+  }
+  
+  .modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: flex-end;
+  }
+  
+  .cancel-btn {
+    background-color: #e0e0e0;
+    color: #333;
     border: none;
-    border-radius: 4px;
-    padding: 6px 12px;
+    border-radius: 5px;
+    padding: 8px 15px;
     cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #ccc;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fadbd8;
+    border-radius: 5px;
+    border-left: 4px solid #e74c3c;
+  }
+  
+  .debug-message {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #7f8c8d;
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+  
+  .token-info {
+    background-color: #eafaf1;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .token-info p {
+    margin: 5px 0;
+    color: #333;
+  }
+  
+  .no-repos-message {
+    background-color: #f8f9fa;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: #7f8c8d;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Terminal Section */
+  .terminal-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .terminal-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  /* Terminal Help Text */
+  .terminal-help-text {
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid #3498db;
+  }
+  
+  .terminal-help-text p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
   }
   

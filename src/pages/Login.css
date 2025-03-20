@@ -73,17 +73,16 @@ input {
     width: 100%; /* Ensure input fields take the full width */
 }
 
-/* Override browser autofill color */
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
-    background-color: white !important; /* Force white background */
+    background-color: white !important; /* Set to white if that’s what you intend */
     color: black !important;
-    -webkit-box-shadow: 0 0 0 50px white inset !important; /* Cover autofill */
+    -webkit-text-fill-color: black !important; /* Force autofilled text color */
+    -webkit-box-shadow: 0 0 0 50px white inset !important;
     box-shadow: 0 0 0 50px white inset !important;
 }
-
 input:focus {
     border: 1px solid #007bff;
     outline: none;

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Dashboard from "./Dashboard";
 import Scans from "./Scan";
@@ -8,7 +8,18 @@ import "./Home.css";
 
 const Home = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState("dashboard");
+
+  // Set the active section based on the URL path
+  useEffect(() => {
+    if (location.pathname === "/reports") {
+      setActiveSection("reports");
+    } else if (location.pathname === "/home" && location.search.includes("token=")) {
+      // If we have a token in URL from OAuth, show scans section
+      setActiveSection("scans");
+    }
+  }, [location]);
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
@@ -34,7 +45,7 @@ const Home = () => {
 
       {/* Main Content */}
       <div className="main-content">
-        <Navbar onSearch={handleSearch} /> {/* Navbar added above all pages */}
+        <Navbar />
         {activeSection === "dashboard" && <Dashboard />}
         {activeSection === "scans" && <Scans />}
         {activeSection === "reports" && <Reports />}

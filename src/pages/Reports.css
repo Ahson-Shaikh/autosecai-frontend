@@ -1,0 +1,260 @@
+.reports-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.reports-container.loading,
+.reports-container.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  font-size: 18px;
+}
+
+.reports-container.error {
+  color: #e74c3c;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.report-header h2 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.repo-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 14px;
+  margin: 0;
+}
+
+.repo-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.scan-type {
+  background-color: #3498db;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.scan-date {
+  color: #7f8c8d;
+}
+
+.download-pdf-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.download-pdf-btn:hover {
+  background-color: #c0392b;
+}
+
+.pdf-download-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.pdf-error {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin: 0;
+  max-width: 250px;
+  text-align: right;
+}
+
+.download-pdf-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.vulnerabilities-summary {
+  margin-bottom: 30px;
+}
+
+.summary-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.summary-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  min-width: 100px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.stat-item.high .stat-value {
+  color: #e74c3c;
+}
+
+.stat-item.medium .stat-value {
+  color: #f39c12;
+}
+
+.stat-item.low .stat-value {
+  color: #3498db;
+}
+
+.no-vulnerabilities {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #27ae60;
+  font-size: 18px;
+}
+
+.vulnerabilities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vulnerabilities-list h3 {
+  margin: 0;
+  color: #333;
+}
+
+.vulnerability-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vulnerability-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.vulnerability-header h4 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.severity-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.severity-high {
+  background-color: #fadbd8;
+  color: #e74c3c;
+}
+
+.severity-medium {
+  background-color: #fef9e7;
+  color: #f39c12;
+}
+
+.severity-low {
+  background-color: #ebf5fb;
+  color: #3498db;
+}
+
+.severity-info {
+  background-color: #f8f9fa;
+  color: #7f8c8d;
+}
+
+.vulnerability-meta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.vulnerability-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vulnerability-section h5 {
+  margin: 0 0 10px 0;
+  color: #555;
+  font-size: 16px;
+}
+
+.vulnerability-section p {
+  margin: 0;
+  line-height: 1.5;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .report-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .summary-stats {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .stat-item {
+    min-width: calc(50% - 15px);
+  }
+} 
